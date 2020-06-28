@@ -21,3 +21,6 @@ Stacks: <br/>
 ProjectTest_FEV2<br/>
 ProjectTest_BE
 
+Instructions
+No need to setup any data storage. cause its using memory storage in EFCore
+Just need to run the both apps
