@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Edit Partner";
+    Layout = "~/Areas/BackOffice/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron" data-pages="parallax">
+    <div class=" container-fluid container-fixed-lg sm-p-l-0 sm-p-r-0">
+        <div class="inner">
+            <!-- START BREADCRUMB -->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a ui-sref="partners">Partners</a></li>
+                <li class="breadcrumb-item active"><a href="#">Edit</a></li>
+            </ol>
+            <!-- END BREADCRUMB -->
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid container-fixed-lg">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card card-default">
+                <div class="card-header ">
+                    <h3>Edit Partner</h3>
+                </div>
+                <div class="card-block">
+                    <form class="k-form" name="partnerForm" ng-submit="submit(partnerForm.$invalid)">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="k-form-field">
+                                    <span>Code</span>
+                                    <input class=" k-textbox" ng-model="partner.Code" required placeholder="Code" />
+                                </div>
+                                <div class="k-form-field">
+                                    <span>Name</span>
+                                    <input class=" k-textbox" value="" ng-model="partner.Name" required placeholder="Name" />
+                                </div>
+                                <div class="k-form-field">
+                                    <span>Type</span>
+                                    <select class="form-control" data-ng-model="partner.PartnerType" placeholder="Partner Type">
+                                        <option value="">-- Please Select --</option>
+                                        <option data-ng-repeat="t in PartnerTypes" value="{{t.id}}">{{t.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="k-form-field">
+                                    <span>Country</span>
+                                    <select class="form-control" data-ng-model="partner.CountryIsoCode2" placeholder="Country ISO>">
+                                        <option value="">-- Please Select --</option>
+                                        <option data-ng-repeat="c in Countries" value="{{c.ISOCode2}}">{{c.Name}}</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="k-form-field">
+                                    <span>State</span>
+                                    <input class="k-textbox" value="" ng-model="partner.State" placeholder="State" />
+                                </div>
+                                <div class="k-form-field">
+                                    <span>City</span>
+                                    <input class=" k-textbox" value="" ng-model="partner.City" placeholder="City" />
+                                </div>
+                                <div class="k-form-field">
+                                    <span>Address</span>
+                                    <input class=" k-textbox" value="" ng-model="partner.Address" placeholder="Address" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:20px;">
+                            <div class="text-left margin-top-20">
+                                <div>
+                                    <a class="k-button" ui-sref="partners">Cancel</a>
+                                    <button type="submit" class="k-button k-primary" ng-disabled="partnerForm.$invalid || isProcessing">Submit</button>
+                                    @*<button type="button" class="k-button k-primary" ng-disabled="isProcessing" ng-click="delete()">Delete</button>*@
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

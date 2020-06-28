@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html ng-app="ProjectTest">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ProjectTest</title>
+
+    @Styles
+    <style>
+
+        #loginForm,
+        #confirmLoginForm {
+            height: 100%;
+        }
+    </style>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/angular.min.js?")"></script>
+    <script type="text/javascript" src="@Url.Content("~/App/Common/Scripts/app-ng-empty.js")"></script>
+    @*  <script type="text/javascript" src="@Url.Content("~/App/Common/Scripts/app-routes.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/App/Common/Scripts/app-ng-directives.js")"></script>*@
+
+    <script type="text/javascript" src="@Url.Content("~/App/Common/Services/securityService.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/App/Controllers/Security/securityloginCtrl.js")"></script>
+</head>
+<body id="page-login">
+    <div class="login-container">
+        <div class="mobile-account-logo-container desktop-hidden mobile-show-block">
+            <img src="/content/images/client-logo.jpg" alt="..." class="">
+        </div>
+
+        <div class="ProjectTest-logo-container ">
+            <span>Powered by</span>
+            <img src="/content/images/ProjectTest.svg" onerror="this.onerror=null; this.src='/content/images/ProjectTest-logo.png'">
+        </div>
+
+
+    </div>
+</body>
+@RenderBody()
+
+</html>

@@ -1,0 +1,59 @@
+﻿@{
+    /**/
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_SecurityLayout.cshtml";
+}
+<script type="text/javascript">
+    localStorage.setItem("EnableTimeDiagnostics",@ViewBag.EnableTimeDiagnostics)
+
+</script>
+@Html.AntiForgeryToken()
+
+<div class="login-form" ng-controller="securityLoginCtrl">
+    <div class="account-logo-container mobile-hidden">
+        <img src="/content/images/client-logo.jpg" alt="..." class="">
+    </div>
+    <form name="loginForm" data-ng-submit="submit();" role="form">
+        <div class="login-page-header">Sign in</div>
+        <div class="container-alpha" ng-if="errorMessage">
+            <div class="col-md-12">
+                <div class="alert alert-danger">
+                    {{errorMessage}}
+                </div>
+            </div>
+
+        </div>
+        <div class="container-alpha border-bottom-gray">
+            <div class="input-alpha">
+                @*@Html.TextBoxFor(m => m.Username, new { @type = "email", required = "required" })*@
+                <input data-val="true" data-val-required="The Username field is required." id="Email" name="Email" data-ng-required="true" data-ng-model="user.Email" type="text" value="" autocomplete="off">
+                <label>Username</label>
+            </div>
+            @*<span data-ng-show="(loginForm.Email.$dirty || loginForm.$submitted) && loginForm.Email.$error.required" class="help-block">Username is required</span>*@
+        </div>
+
+        <div class="container-alpha border-bottom-gray">
+            <div class="input-alpha">
+                <input data-val="true" data-val-required="The Password field is required." id="Password" name="Password" required="required" type="password" data-ng-required="true" data-ng-model="user.Password" autocomplete="off">
+                <label>Password</label>
+            </div>
+            @*<span data-ng-show="(loginForm.Password.$dirty || loginForm.$submitted) && loginForm.Password.$error.required" class="help-block">Password is required</span>*@
+        </div>
+
+        <div class="form-group forgot-password-section">
+            <a href="#" class="forgot-password-link">FORGOTTEN PASSWORD?</a>
+        </div>
+
+        <button class="btn-clear login-submit" type="submit" ng-disabled="isProcessing" style="width: 180px !important;">
+            <object id="ProjectTest-loader" data="/content/icons/ProjectTest-preloader-icon.svg" ng-show="isProcessing" type="image/svg+xml"></object>
+            Continue
+        </button>
+
+
+        <div class="mobile-ProjectTest-logo-container desktop-hidden mobile-show-block">
+            <span>Powered by</span>
+            <img src="/content/images/ProjectTest.svg" onerror="this.onerror=null; this.src='/content/images/ProjectTest-logo.png'">
+        </div>
+    </form>
+</div>
+

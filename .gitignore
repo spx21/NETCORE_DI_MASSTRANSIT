@@ -1,0 +1,12 @@
+ProjectTest/Core/bin/
+ProjectTest/.vs/
+ProjectTest/ProjectTest/bin/Debug/netcoreapp3.1/runtimes/linux-musl-x64/native/libe_sqlite3.so
+ProjectTest/ProjectTest/bin/Debug/
+ProjectTest/ProjectTest/obj/
+ProjectTest/Core/obj/
+ProjectTest/ProjectTest-BE/bin/
+ProjectTest/ProjectTest-BE/obj/
+ProjectTest/ProjectTest_FEv2/obj/
+ProjectTest/ProjectTest_FEv2/bin/
+ProjectTest/CoreV2/obj/
+ProjectTest/CoreV2/bin/
